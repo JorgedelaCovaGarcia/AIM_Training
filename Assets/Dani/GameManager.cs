@@ -29,7 +29,12 @@ public class GameManager : MonoBehaviour
         float spawnX = Random.Range(-screenBounds.x, screenBounds.x);
         float spawnY = Random.Range(-screenBounds.y, screenBounds.y);
         Vector3 spawnPosition = new Vector3(spawnX, spawnY, 0);
-        Instantiate(targetPrefab, spawnPosition, Quaternion.identity);
+       
+        GameObject target = Instantiate(targetPrefab, spawnPosition, Quaternion.identity);
+
+        // Asignar un tamaño aleatorio
+        float randomSize = Random.Range(0.5f, 2.0f); // Cambia estos valores según necesites
+        target.transform.localScale = new Vector3(randomSize, randomSize, randomSize);
     }
 
     public void IncreaseScore()
