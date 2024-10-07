@@ -28,32 +28,22 @@ public class PlayerController : MonoBehaviour
         if (characterController.isGrounded) 
         {
             moveInput = new Vector3(Input.GetAxis("Horizontal"), 0f, Input.GetAxis("Vertical"));
-            
-            if (Input.GetButton("Sprin"))
-            { 
-                moveInput = transform.TransformDirection(moveInput)* runSpeed;
-            
-            
+            moveInput = Vector3.ClampMagnitude(moveInput, 1f);
+            if (Input.GetButton("Sprint"))
+            {
+                moveInput = transform.TransformDirection(moveInput) * runSpeed;
             }
             else 
             {
-
                 moveInput = transform.TransformDirection(moveInput) * walkSpeed;
-
             }
-            
-            
-            
-            
-            
+ 
             moveInput = transform.TransformDirection(moveInput) * walkSpeed;
             if (Input.GetButtonDown("Jump"))
             {
                 moveInput.y = Mathf.Sqrt(jumpHeight * -2f * gravityScale);
-
-
             }
-            moveInput.y += gravityScale*Time.deltaTime;
+            moveInput.y += gravityScale * Time.deltaTime;
             characterController.Move(moveInput * Time.deltaTime);
 
         }

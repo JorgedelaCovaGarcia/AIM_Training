@@ -290,6 +290,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   walkSpeed: 6
+  runSpeed: 10
   jumpHeight: 1.9
   gravityScale: -20
 --- !u!143 &1458676829
