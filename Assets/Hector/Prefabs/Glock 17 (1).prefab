@@ -129,6 +129,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a8a5d495a41e8a4992d4dc310bb6e7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hittableLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  bulletHolePrefab: {fileID: 0}
+  fireRange: 200
 --- !u!114 &3070455052949333091
 MonoBehaviour:
   m_ObjectHideFlags: 0
