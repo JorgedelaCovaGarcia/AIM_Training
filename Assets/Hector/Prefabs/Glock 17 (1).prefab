@@ -132,7 +132,8 @@ MonoBehaviour:
   hittableLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  bulletHolePrefab: {fileID: 0}
+  bulletHolePrefab: {fileID: 2286539926937491733, guid: 42ad23640d0190243a0c173d01beb9d5,
+    type: 3}
   fireRange: 200
 --- !u!114 &3070455052949333091
 MonoBehaviour:

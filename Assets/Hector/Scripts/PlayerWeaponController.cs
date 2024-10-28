@@ -21,6 +21,8 @@ public class PlayerWeaponController : MonoBehaviour
     void Update()
     {
         
+
+
     }
     private void AddWeapon (WeaponController p_weaponPrefab) 
     { 
