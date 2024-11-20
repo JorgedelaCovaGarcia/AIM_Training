@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using System;
 
 public class Int2Event : UnityEvent <int, int> { }
+[SerializeField] 
 
 public class EventManager : MonoBehaviour
 {
@@ -16,5 +18,5 @@ public class EventManager : MonoBehaviour
     }
     #endregion
     
-    public Int2Event updateBulletsEvent = new Int2Event();  
+    public Int2Event updateBulletsEvent = new Int2Event(); 
 }

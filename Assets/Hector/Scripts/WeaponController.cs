@@ -23,6 +23,7 @@ public class WeaponController : MonoBehaviour
     private void Awake()
     {
         currentAmmo = maxAmmo;
+        EventManager.current.updateBulletsEvent.Invoke(currentAmmo, maxAmmo);
     }
 
 
@@ -71,7 +72,9 @@ public class WeaponController : MonoBehaviour
             {
                 HandleShoot();
                 currentAmmo -= 1;
+                EventManager.current.updateBulletsEvent.Invoke(currentAmmo, maxAmmo);
                 return true;
+
             }
         }
 
@@ -79,12 +82,13 @@ public class WeaponController : MonoBehaviour
     }
     IEnumerator Reload()
     {
-        //TODO emepezar animacion de recarga
+        
         Debug.Log("Recargando...");
         yield return new WaitForSeconds(reloadTime);
         currentAmmo = maxAmmo;
+        EventManager.current.updateBulletsEvent.Invoke(currentAmmo, maxAmmo);
         Debug.Log("Recargada");
-        //TODO terminar la animacion
+        
     }
 
 
