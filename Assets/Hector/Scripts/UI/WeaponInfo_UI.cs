@@ -8,20 +8,30 @@ public class WeaponInfo_UI : MonoBehaviour
 {
     public TMP_Text currentBullets;
     public TMP_Text totalBullets;
-    private void OnDisable()
+
+    private void OnEnable()
     {
-        EventManager.current.updateBulletsEvent.AddListener(UpdateBullets); 
-    }
-   private void OnEnable()
-    {
-        EventManager.current.updateBulletsEvent.AddListener(UpdateBullets);
+        EventManager.current.UpdateBulletsEvent.AddListener(UpdateBullets);
     }
 
-    public void UpdateBullets(int newCurrentBullets,int newTotalBullets) 
-    { 
+    private void OnDisable()
+    {
+        EventManager.current.UpdateBulletsEvent.RemoveListener(UpdateBullets);
+    }
+    public void UpdateBullets(int newCurrentBullets, int newTotalBullets)
+    {
+        if (newCurrentBullets <= 0)
+        {
+            currentBullets.color = new Color(1, 0, 0);
+        }
+        else
+        {
+            currentBullets.color = Color.white;
+        }
+
         currentBullets.text = newCurrentBullets.ToString();
         totalBullets.text = newTotalBullets.ToString();
     }
-   
+
 }
 

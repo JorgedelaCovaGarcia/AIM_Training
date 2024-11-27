@@ -4,11 +4,19 @@ using UnityEngine;
 
 public class WeaponController : MonoBehaviour
 {
+    public enum ShotType
+    {
+        Manual,
+        Automatic
+    }
+
+    public WeaponController weapon;
+
     [Header("General")]
     public LayerMask hittableLayers;
     public GameObject bulletHolePrefab;
     private float lastTimeShoot = Mathf.NegativeInfinity;
-   
+    
     public int currentAmmo { get; private set; }
 
     [Header("Shoot Paramaters")]
@@ -22,8 +30,10 @@ public class WeaponController : MonoBehaviour
 
     private void Awake()
     {
-        currentAmmo = maxAmmo;
-        EventManager.current.updateBulletsEvent.Invoke(currentAmmo, maxAmmo);
+
+        cameraPlayerTransform = GameObject.FindGameObjectWithTag("MainCamera").transform;
+        currentAmmo = weapon.maxAmmo;
+        EventManager.current.UpdateBulletsEvent.Invoke(currentAmmo, weapon.maxAmmo);
     }
 
 
@@ -72,7 +82,7 @@ public class WeaponController : MonoBehaviour
             {
                 HandleShoot();
                 currentAmmo -= 1;
-                EventManager.current.updateBulletsEvent.Invoke(currentAmmo, maxAmmo);
+                EventManager.current.UpdateBulletsEvent.Invoke(currentAmmo, maxAmmo);
                 return true;
 
             }
@@ -86,7 +96,7 @@ public class WeaponController : MonoBehaviour
         Debug.Log("Recargando...");
         yield return new WaitForSeconds(reloadTime);
         currentAmmo = maxAmmo;
-        EventManager.current.updateBulletsEvent.Invoke(currentAmmo, maxAmmo);
+        EventManager.current.UpdateBulletsEvent.Invoke(currentAmmo, maxAmmo);
         Debug.Log("Recargada");
         
     }
