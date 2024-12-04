@@ -704,7 +704,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: 0.01
   far clip plane: 1000
   field of view: 56.1
   orthographic: 0
@@ -1042,12 +1042,12 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: d46248b314e9d2047873ce88549c8c4f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.47
+      value: 0.47000003
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d46248b314e9d2047873ce88549c8c4f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.11
+      value: -0.10999997
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d46248b314e9d2047873ce88549c8c4f,
         type: 3}
@@ -1093,6 +1093,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: m4
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d46248b314e9d2047873ce88549c8c4f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1857,7 +1862,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5960623694843225781, guid: 05e61be59651f644b8684b0ac069ac00,
         type: 3}
       insertIndex: 3
-      addedObject: {fileID: 1881520291}
+      addedObject: {fileID: 1881520294}
   m_SourcePrefab: {fileID: 100100000, guid: 05e61be59651f644b8684b0ac069ac00, type: 3}
 --- !u!4 &1881520288 stripped
 Transform:
@@ -1865,7 +1870,7 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1881520287}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1881520291
+--- !u!114 &1881520294
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1874,12 +1879,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 606024350}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa13a8da1c2e49a419928ff31cdf6746, type: 3}
+  m_Script: {fileID: 11500000, guid: 25cb97e1cd9f3454eb92b9d57d9fc420, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  armas:
-  - {fileID: 606024350}
-  - {fileID: 1776225805}
+  recoilAmount: 0.2
+  recoilSpeed: 5
+  returnSpeed: 10
 --- !u!1 &1914724701
 GameObject:
   m_ObjectHideFlags: 0
@@ -2128,6 +2133,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2046228214}
+  - component: {fileID: 2046228215}
   m_Layer: 0
   m_Name: DefaultParentSocket
   m_TagString: Untagged
@@ -2148,10 +2154,25 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1776225806}
   - {fileID: 1881520288}
+  - {fileID: 1776225806}
   m_Father: {fileID: 452803951}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2046228215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2046228213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa13a8da1c2e49a419928ff31cdf6746, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  armas:
+  - {fileID: 606024350}
+  - {fileID: 1776225805}
 --- !u!1 &2126201610
 GameObject:
   m_ObjectHideFlags: 0
