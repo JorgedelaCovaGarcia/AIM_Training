@@ -8,7 +8,7 @@ using UnityEngine.Rendering;
 public class FruitSpawner : MonoBehaviour
 {
     public GameObject fruitPrefab; // Prefab de la fruta
-    public float spawnRate = 1.0f; // Tiempo entre spawns
+    public float spawnRate = 2.0f; // Tiempo entre spawns
     public Vector3 spawnArea = new Vector3(10, 0, 10); // Tamaño del área de spawn
 
     void Start()
@@ -28,6 +28,8 @@ public class FruitSpawner : MonoBehaviour
 
         // Instancia la fruta
         Instantiate(fruitPrefab, spawnPosition, Quaternion.identity);
+        Quaternion randomRotation = Quaternion.Euler(0, Random.Range(0, 360), 0);
+        Instantiate(fruitPrefab, spawnPosition, randomRotation);
     }
 
     void OnDrawGizmosSelected()
