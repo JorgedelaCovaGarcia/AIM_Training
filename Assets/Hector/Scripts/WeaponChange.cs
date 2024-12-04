@@ -5,9 +5,16 @@ using UnityEngine;
 public class WeaponChange : MonoBehaviour
 {
     // Start is called before the first frame update
+    public GameObject[] armas; 
+    private int indiceArmaActual = 0;
     void Start()
     {
-        
+        if (armas.Length > 0)
+        {
+            armas[indiceArmaActual].SetActive(true);
+        }
+
+
     }
 
     // Update is called once per frame
