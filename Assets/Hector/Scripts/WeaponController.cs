@@ -79,12 +79,12 @@ public class WeaponController : MonoBehaviour
     }
     IEnumerator Reload()
     {
-        //TODO emepezar animacion de recarga
+        
         Debug.Log("Recargando...");
         yield return new WaitForSeconds(reloadTime);
         currentAmmo = maxAmmo;
         Debug.Log("Recargada");
-        //TODO terminar la animacion
+        
     }
 
 
