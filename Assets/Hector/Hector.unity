@@ -528,8 +528,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac3d4888d6679bd49bbccf41eb58c616, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentBullets: {fileID: 1701537866}
-  totalBullets: {fileID: 1386944939}
+  currentBulletsText: {fileID: 0}
+  totalBulletsText: {fileID: 0}
 --- !u!1001 &344673532
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1615,8 +1615,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac3d4888d6679bd49bbccf41eb58c616, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentBullets: {fileID: 2138805180}
-  totalBullets: {fileID: 172128447}
+  currentBulletsText: {fileID: 2138805180}
+  totalBulletsText: {fileID: 172128447}
 --- !u!1001 &1344658905
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2611,18 +2611,24 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1776225805}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b33e989bba8b2242a70a41199438cf6, type: 3}
+  m_Script: {fileID: 11500000, guid: 2e31bbf203248bc4f80aa90dbcb8d5bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  recoilAmountVertical: 0.3
-  recoilAmountHorizontal: 0.1
-  recoilSpeed: 10
-  returnSpeed: 5
+  hittableLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  bulletHolePrefab: {fileID: 2286539926937491733, guid: 42ad23640d0190243a0c173d01beb9d5,
+    type: 3}
+  fireRange: 200
   fireRate: 0.1
   maxAmmo: 30
   currentAmmo: 0
+  reloadTime: 2
+  recoilForceX: 2
+  recoilForceY: 0.5
+  recoilRecoverySpeed: 5
 --- !u!1 &1852338165
 GameObject:
   m_ObjectHideFlags: 0
