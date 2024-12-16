@@ -8,7 +8,7 @@ using UnityEngine.Rendering;
 public class FruitSpawner : MonoBehaviour
 {
     public GameObject fruitPrefab; // Prefab de la fruta
-    public float spawnRate = 2.0f; // Tiempo entre spawns
+    public float spawnRate = 1; // Tiempo entre spawns
     public Vector3 spawnArea = new Vector3(10, 0, 10); // Tamaño del área de spawn
 
     void Start()
