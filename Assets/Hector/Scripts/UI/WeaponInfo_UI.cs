@@ -6,17 +6,18 @@ using UnityEngine;
 
 public class WeaponInfo_UI : MonoBehaviour
 {
-    public TMP_Text currentBullets;
-    public TMP_Text totalBullets;
-     
-    public void UpdateCurrent(int newCurrentBullets) 
-    { 
-        currentBullets.text = newCurrentBullets.ToString();
-    
+    public TMP_Text currentBulletsText;  // Muestra las balas actuales
+    public TMP_Text totalBulletsText;    // Muestra las balas totales
+
+    // Método para actualizar las balas actuales en la UI
+    public void UpdateCurrentBullets(int currentBullets)
+    {
+        currentBulletsText.text = currentBullets.ToString();
     }
-   public void UpdateTotal (int newTotalBullets) 
-    { 
-     totalBullets.text = newTotalBullets.ToString();
-    
+
+    // Método para actualizar las balas totales en la UI
+    public void UpdateTotalBullets(int totalBullets)
+    {
+        totalBulletsText.text = totalBullets.ToString();
     }
 }
