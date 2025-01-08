@@ -35,6 +35,11 @@ public class WeaponControllerAutomatic : MonoBehaviour
         currentAmmo = maxAmmo;
     }
 
+    private void OnEnable()
+    {
+        targetRecoil = Vector3.zero;
+    }
+
     private void Start()
     {
         cameraPlayerTransform = GameObject.FindGameObjectWithTag("MainCamera").transform;

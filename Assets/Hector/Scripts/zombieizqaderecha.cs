@@ -4,34 +4,44 @@ using UnityEngine;
 
 public class zombieizqaderecha : MonoBehaviour
 {
-    // Start is called before the first frame update
-    public float speed = 2.0f;  // Velocidad del movimiento
-    private float moveDirection = 1.0f; // Dirección del movimiento (1 = derecha, -1 = izquierda)
+   
+    public float speed = 2.0f;  
+    private float moveDirection = 1.0f; 
 
-    public int health = 5;  // Salud inicial del zombie
-    private bool isDead = false;  // Estado del zombie
+    public int health = 5;  
+    private bool isDead = false;
+
+
+
+    void Start()
+    {
+        
+        Destroy(gameObject, 10f);
+    }
 
     void Update()
     {
-        if (isDead) return;  // Si el zombie está muerto, no se mueve
+        if (isDead) return; 
 
-        // Mueve al zombie en el eje X
+        
         transform.Translate(Vector3.right * speed * moveDirection * Time.deltaTime);
 
-        // Cambia de dirección al alcanzar límites
-        if (transform.position.x > 10f) // Limite derecho
+        
+        if (transform.position.x > 10f) 
         {
-            moveDirection = -1f; // Mover hacia la izquierda
-            Flip(); // Hacer que el zombie mire a la izquierda
+            moveDirection = -1f; 
+            Flip(); 
+
         }
-        else if (transform.position.x < -10f) // Limite izquierdo
+        else if (transform.position.x < -10f) 
         {
-            moveDirection = 1f; // Mover hacia la derecha
-            Flip(); // Hacer que el zombie mire a la derecha
+            moveDirection = 1f; 
+            Flip(); 
         }
+
     }
 
-    // Función para voltear el sprite en el eje X
+    
     void Flip()
     {
         Vector3 theScale = transform.localScale;
@@ -39,25 +49,25 @@ public class zombieizqaderecha : MonoBehaviour
         transform.localScale = theScale;
     }
 
-    // Función para recibir daño
+  
     public void TakeDamage(int damage)
     {
-        if (isDead) return;  // Si ya está muerto, no recibe más daño
+        if (isDead) return; 
 
-        health -= damage;  // Reduce la salud por la cantidad de daño recibido
+        health -= damage;  
 
         if (health <= 0)
         {
-            Die();  // Si la salud llega a 0, el zombie muere
+            Die();  
         }
     }
 
-    // Función que maneja la muerte del zombie
+    
     void Die()
     {
-        isDead = true;  // El zombie está muerto
-        // Puedes desactivar el zombie, destruirlo o cambiarlo de estado.
-        // En este caso, lo destruimos después de 1 segundo para simular que "muere"
-        Destroy(gameObject, 1f);  // Destruye el zombie después de 1 segundo
+        isDead = true; 
+      
+        Destroy(gameObject, 1f); 
     }
+     
 }
