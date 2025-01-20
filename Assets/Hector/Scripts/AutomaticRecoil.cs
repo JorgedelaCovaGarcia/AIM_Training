@@ -6,27 +6,27 @@ public class AutomaticRecoil : MonoBehaviour
 {
     // Start is called before the first frame update
     [Header("Recoil Settings")]
-    public float recoilAmountVertical = 0.3f;  // Cuánto retrocede el arma verticalmente
-    public float recoilAmountHorizontal = 0.1f; // Cuánto retrocede el arma horizontalmente
-    public float recoilSpeed = 10f;  // Velocidad de movimiento del retroceso
-    public float returnSpeed = 5f;  // Velocidad de retorno del arma a su posición original
+    public float recoilAmountVertical = 0.3f;  
+    public float recoilAmountHorizontal = 0.1f; 
+    public float recoilSpeed = 10f;  
+    public float returnSpeed = 5f;  
 
     [Header("Fire Settings")]
-    public float fireRate = 0.1f;  // Tiempo entre disparos
-    public int maxAmmo = 30;  // Número máximo de balas
-    public int currentAmmo;  // Número actual de balas
+    public float fireRate = 0.1f;  
+    public int maxAmmo = 30;  
+    public int currentAmmo;  
 
-    private float lastTimeShoot = Mathf.NegativeInfinity;  // Tiempo del último disparo
-    private Vector3 originalPosition;  // Posición original del arma
-    private Vector3 currentRecoil;  // Variable que almacena el retroceso acumulado
+    private float lastTimeShoot = Mathf.NegativeInfinity;  
+    private Vector3 originalPosition;  
+    private Vector3 currentRecoil;  
 
-    private Transform cameraTransform;  // Transform de la cámara para aplicar el retroceso
+    private Transform cameraTransform;  
 
     void Start()
     {
         currentAmmo = maxAmmo;
-        originalPosition = transform.localPosition;  // Guardar la posición original del arma
-        cameraTransform = Camera.main.transform;  // Obtener la cámara principal del jugador
+        originalPosition = transform.localPosition;  
+        cameraTransform = Camera.main.transform;  
     }
 
     void Update()
@@ -39,17 +39,17 @@ public class AutomaticRecoil : MonoBehaviour
 
         if (currentAmmo == 0 || Input.GetKeyDown(KeyCode.R))
         {
-            StartCoroutine(Reload());  // Recargar si se presiona 'R' o si no hay más balas
+            StartCoroutine(Reload());  
         }
 
-        // Aplicar retroceso a la cámara
+        
         ApplyRecoil();
     }
 
-    // Método para disparar y aplicar el retroceso
+  
     void HandleShoot()
     {
-        // Disparo: restamos una bala y aplicamos el retroceso
+      
         currentAmmo--;
 
         // Aquí puedes agregar la lógica de disparo, como raycast, creación de agujeros de bala, etc.

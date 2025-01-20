@@ -5,14 +5,14 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     // Start is called before the first frame update
-    public GameObject balaPrefab;    // Prefab de la bala
-    public Transform puntoDeDisparo; // Punto desde donde se dispara la bala
-    public float fuerzaDisparo = 500f; // Fuerza de disparo
+    public GameObject balaPrefab;    
+    public Transform puntoDeDisparo; 
+    public float fuerzaDisparo = 500f; 
 
     void Update()
     {
-        // Detectar cuando el jugador presiona la tecla para disparar
-        if (Input.GetMouseButtonDown(0)) // Puedes cambiar Space por otra tecla
+       
+        if (Input.GetMouseButtonDown(0)) 
         {
             Disparar();
         }
@@ -20,14 +20,14 @@ public class Bullet : MonoBehaviour
 
     void Disparar()
     {
-        // Crear la bala en el punto de disparo
+       
         GameObject bala = Instantiate(balaPrefab, puntoDeDisparo.position, puntoDeDisparo.rotation);
 
-        // Obtener el Rigidbody de la bala
+
         Rigidbody rb = bala.GetComponent<Rigidbody>();
         if (rb != null)
         {
-            // Aplicar fuerza para disparar la bala hacia adelante
+            
             rb.AddForce(puntoDeDisparo.forward * fuerzaDisparo);
         }
     }

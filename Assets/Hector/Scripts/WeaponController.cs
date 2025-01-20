@@ -43,7 +43,7 @@ public class WeaponController : MonoBehaviour
             StartCoroutine(Reload());
         }
 
-        transform.localPosition = Vector3.Lerp(transform.localPosition, Vector3.zero, Time.deltaTime * 5f);
+        //transform.localPosition = Vector3.Lerp(transform.localPosition, Vector3.zero, Time.deltaTime * 5f);
     }
 
     private void HandleShoot()
