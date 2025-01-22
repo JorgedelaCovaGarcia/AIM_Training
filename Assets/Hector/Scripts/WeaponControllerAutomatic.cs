@@ -38,7 +38,7 @@ public class WeaponControllerAutomatic : MonoBehaviour
     private void OnEnable()
     {
         targetRecoil = Vector3.zero;
-        //currentRecoil = Vector3.zero;
+        currentRecoil = Vector3.zero;
         //cameraPlayerTransform.localPosition = Vector3.zero;
     }
 
@@ -112,7 +112,7 @@ public class WeaponControllerAutomatic : MonoBehaviour
         currentRecoil = Vector3.Lerp(currentRecoil, targetRecoil, Time.deltaTime * recoilRecoverySpeed);
 
         // Aplicar el recoil a la cámara de forma controlada en su espacio local
-       // cameraPlayerTransform.localPosition = new Vector3(0, -currentRecoil.y, -currentRecoil.x);
+       cameraPlayerTransform.localPosition = new Vector3(0, 1.7f, -currentRecoil.x);
     }
 
     private IEnumerator Reload()
