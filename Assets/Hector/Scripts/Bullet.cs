@@ -4,31 +4,42 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    // Start is called before the first frame update
+     
     public GameObject balaPrefab;    
     public Transform puntoDeDisparo; 
     public float fuerzaDisparo = 500f; 
+    
+     void Update()
+     {
 
-    void Update()
-    {
-       
-        if (Input.GetMouseButtonDown(0)) 
-        {
-            Disparar();
-        }
-    }
+         if (Input.GetMouseButtonDown(0)) 
+         {
+             Disparar();
+         }
+     }
 
-    void Disparar()
-    {
-       
-        GameObject bala = Instantiate(balaPrefab, puntoDeDisparo.position, puntoDeDisparo.rotation);
+     void Disparar()
+     {
+
+         GameObject bala = Instantiate(balaPrefab, puntoDeDisparo.position, puntoDeDisparo.rotation);
 
 
-        Rigidbody rb = bala.GetComponent<Rigidbody>();
-        if (rb != null)
-        {
-            
-            rb.AddForce(puntoDeDisparo.forward * fuerzaDisparo);
-        }
-    }
+         Rigidbody rb = bala.GetComponent<Rigidbody>();
+         if (rb != null)
+         {
+
+             rb.AddForce(puntoDeDisparo.forward * fuerzaDisparo);
+         }
+     }
+     private void OnCollisionEnter(Collision collision)
+     {
+
+         if (balaPrefab.gameObject.CompareTag("Enemy"))
+         {
+             Destroy(collision.gameObject);
+
+
+         }
+     }
+   
 }
