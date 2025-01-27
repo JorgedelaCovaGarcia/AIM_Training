@@ -28,18 +28,9 @@ public class Bullet : MonoBehaviour
          if (rb != null)
          {
 
-             rb.AddForce(puntoDeDisparo.forward * fuerzaDisparo);
+             rb.AddForce(puntoDeDisparo.forward * fuerzaDisparo, ForceMode.Impulse);
          }
      }
-     private void OnCollisionEnter(Collision collision)
-     {
-
-         if (balaPrefab.gameObject.CompareTag("Enemy"))
-         {
-             Destroy(collision.gameObject);
-
-
-         }
-     }
+     
    
 }

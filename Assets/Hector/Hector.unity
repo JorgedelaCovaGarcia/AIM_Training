@@ -2115,6 +2115,12 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1511177206 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1397297198517433194, guid: 05e61be59651f644b8684b0ac069ac00,
+    type: 3}
+  m_PrefabInstance: {fileID: 1881520287}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1527436054
 GameObject:
   m_ObjectHideFlags: 0
@@ -2849,6 +2855,11 @@ PrefabInstance:
       propertyPath: fireRate
       value: 0.8
       objectReference: {fileID: 0}
+    - target: {fileID: 1428040483940373137, guid: 05e61be59651f644b8684b0ac069ac00,
+        type: 3}
+      propertyPath: bulletHolePrefab
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 3070455052949333091, guid: 05e61be59651f644b8684b0ac069ac00,
         type: 3}
       propertyPath: m_Enabled
@@ -2960,9 +2971,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 777e14cf553aaac459463a6b22aa1a33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  balaPrefab: {fileID: 0}
-  puntoDeDisparo: {fileID: 0}
-  fuerzaDisparo: 500
+  balaPrefab: {fileID: 5322894440884652945, guid: 153c51921ede2674bbfe2b7543a589ff,
+    type: 3}
+  puntoDeDisparo: {fileID: 1511177206}
+  fuerzaDisparo: 15
 --- !u!1 &1914724701
 GameObject:
   m_ObjectHideFlags: 0
@@ -3591,6 +3603,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: zombieizqaderecha
+      objectReference: {fileID: 0}
+    - target: {fileID: 8278522769984633124, guid: fc148aed7a40f354f848b51bc53718b0,
+        type: 3}
+      propertyPath: m_TagString
+      value: Sphere
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

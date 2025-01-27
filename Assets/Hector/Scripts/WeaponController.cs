@@ -53,8 +53,8 @@ public class WeaponController : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(cameraPlayerTransform.position, cameraPlayerTransform.forward, out hit, fireRange, hittableLayers))
             {
-                GameObject bulletHoleClone = Instantiate(bulletHolePrefab, hit.point + hit.normal * 0.001f, Quaternion.LookRotation(hit.normal));
-                Destroy(bulletHoleClone, 4f);
+                //GameObject bulletHoleClone = Instantiate(bulletHolePrefab, hit.point + hit.normal * 0.001f, Quaternion.LookRotation(hit.normal));
+                //Destroy(bulletHoleClone, 4f);
             }
 
         }
