@@ -3604,6 +3604,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: zombieizqaderecha
       objectReference: {fileID: 0}
+    - target: {fileID: 8278522769984633124, guid: fc148aed7a40f354f848b51bc53718b0,
+        type: 3}
+      propertyPath: m_TagString
+      value: Sphere
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
