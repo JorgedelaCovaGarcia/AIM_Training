@@ -7,7 +7,7 @@ public class AutomaticWeapon : MonoBehaviour
     // Start is called before the first frame update
     [Header("General")]
     public LayerMask hittableLayers;  
-    public GameObject bulletHolePrefab;  
+    //public GameObject bulletHolePrefab;  
     private float lastTimeShoot = Mathf.NegativeInfinity;  
     private Transform cameraPlayerTransform;
 
@@ -59,8 +59,8 @@ public class AutomaticWeapon : MonoBehaviour
         if (Physics.Raycast(cameraPlayerTransform.position, cameraPlayerTransform.forward, out hit, fireRange, hittableLayers))
         {
            
-            GameObject bulletHoleClone = Instantiate(bulletHolePrefab, hit.point + hit.normal * 0.001f, Quaternion.LookRotation(hit.normal));
-            Destroy(bulletHoleClone, 4f);  
+           // GameObject bulletHoleClone = Instantiate(bulletHolePrefab, hit.point + hit.normal * 0.001f, Quaternion.LookRotation(hit.normal));
+            //Destroy(bulletHoleClone, 4f);  
         }
 
        
