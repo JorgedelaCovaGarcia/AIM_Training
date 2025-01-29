@@ -530,6 +530,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentBulletsText: {fileID: 0}
   totalBulletsText: {fileID: 0}
+  currentBullets: 30
+  totalBullets: 100
+  maxCurrentBullets: 30
+  maxTotalBullets: 100
 --- !u!1001 &344673532
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -788,6 +792,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4030818715711028, guid: 151fe3144103e1440900697f4b29c68e,
     type: 3}
   m_PrefabInstance: {fileID: 1489072744}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &535577219 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5322894440884652945, guid: 153c51921ede2674bbfe2b7543a589ff,
+    type: 3}
+  m_PrefabInstance: {fileID: 8280661568758356231}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &606024350 stripped
 GameObject:
@@ -1356,6 +1366,45 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1091860528 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8278522769984633124, guid: fc148aed7a40f354f848b51bc53718b0,
+    type: 3}
+  m_PrefabInstance: {fileID: 1273700367331252136}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &1091860534
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1091860528}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!4 &1104793037 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -6292588525432036275, guid: d46248b314e9d2047873ce88549c8c4f,
+    type: 3}
+  m_PrefabInstance: {fileID: 1344658905}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1151954850
 GameObject:
   m_ObjectHideFlags: 0
@@ -1482,6 +1531,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentBulletsText: {fileID: 2138805180}
   totalBulletsText: {fileID: 172128447}
+  currentBullets: 30
+  totalBullets: 100
+  maxCurrentBullets: 30
+  maxTotalBullets: 100
 --- !u!1001 &1344658905
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1564,6 +1617,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -6292588525432036275, guid: d46248b314e9d2047873ce88549c8c4f,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.103
+      objectReference: {fileID: 0}
+    - target: {fileID: -6292588525432036275, guid: d46248b314e9d2047873ce88549c8c4f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.157
+      objectReference: {fileID: 0}
+    - target: {fileID: -6292588525432036275, guid: d46248b314e9d2047873ce88549c8c4f,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2.92
       objectReference: {fileID: 0}
     - target: {fileID: -5922622823359544968, guid: d46248b314e9d2047873ce88549c8c4f,
         type: 3}
@@ -1655,6 +1723,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1776225809}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d46248b314e9d2047873ce88549c8c4f,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1776225810}
   m_SourcePrefab: {fileID: 100100000, guid: d46248b314e9d2047873ce88549c8c4f, type: 3}
 --- !u!1 &1386944937
 GameObject:
@@ -2383,7 +2455,6 @@ MonoBehaviour:
   hittableLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  bulletHolePrefab: {fileID: 876621142}
   fireRange: 200
   fireRate: 0.1
   maxAmmo: 30
@@ -2668,8 +2739,6 @@ MonoBehaviour:
   hittableLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  bulletHolePrefab: {fileID: 2286539926937491733, guid: 42ad23640d0190243a0c173d01beb9d5,
-    type: 3}
   fireRange: 200
   fireRate: 0.1
   maxAmmo: 30
@@ -2712,6 +2781,22 @@ MonoBehaviour:
   recoilForceX: 2
   recoilForceY: 0.5
   recoilRecoverySpeed: 5
+--- !u!114 &1776225810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1776225805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39f64bedfc48d9d46a2a03bdff75b5d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  balaPrefab: {fileID: 535577219}
+  puntoDeDisparo: {fileID: 1104793037}
+  fuerzaDisparo: 500
+  tiempoEntreDisparos: 0.1
 --- !u!1 &1852338165
 GameObject:
   m_ObjectHideFlags: 0
@@ -2974,7 +3059,7 @@ MonoBehaviour:
   balaPrefab: {fileID: 5322894440884652945, guid: 153c51921ede2674bbfe2b7543a589ff,
     type: 3}
   puntoDeDisparo: {fileID: 1511177206}
-  fuerzaDisparo: 15
+  fuerzaDisparo: 30
 --- !u!1 &1914724701
 GameObject:
   m_ObjectHideFlags: 0
@@ -3612,7 +3697,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8278522769984633124, guid: fc148aed7a40f354f848b51bc53718b0,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1091860534}
   m_SourcePrefab: {fileID: 100100000, guid: fc148aed7a40f354f848b51bc53718b0, type: 3}
 --- !u!1001 &1299222295857076901
 PrefabInstance:
