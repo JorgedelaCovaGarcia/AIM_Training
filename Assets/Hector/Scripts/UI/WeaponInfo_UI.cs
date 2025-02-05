@@ -35,7 +35,7 @@ public class WeaponInfo_UI : MonoBehaviour
         totalBulletsText.text = totalBullets.ToString(); // Actualizamos el texto
     }
 
-    // Método para disparar, reduce las balas actuales
+
     public void Disparar()
     {
         if (currentBullets > 0) // Solo dispara si hay balas disponibles
