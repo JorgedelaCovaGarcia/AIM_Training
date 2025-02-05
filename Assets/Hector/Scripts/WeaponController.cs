@@ -8,7 +8,9 @@ public class WeaponController : MonoBehaviour
     public LayerMask hittableLayers;
     public GameObject bulletHolePrefab;
     private float lastTimeShoot = Mathf.NegativeInfinity;
-   
+
+    [SerializeField] WeaponInfo_UI weaponInfo;
+
     public int currentAmmo { get; private set; }
 
     [Header("Shoot Paramaters")]
@@ -50,6 +52,7 @@ public class WeaponController : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1"))
         {
+            weaponInfo.Disparar(); //UI.
             RaycastHit hit;
             if (Physics.Raycast(cameraPlayerTransform.position, cameraPlayerTransform.forward, out hit, fireRange, hittableLayers))
             {
@@ -83,6 +86,7 @@ public class WeaponController : MonoBehaviour
         Debug.Log("Recargando...");
         yield return new WaitForSeconds(reloadTime);
         currentAmmo = maxAmmo;
+        weaponInfo.Recargar(); //UI.
         Debug.Log("Recargada");
         
     }

@@ -21,6 +21,11 @@ public class WeaponInfo_UI : MonoBehaviour
         UpdateTotalBullets(totalBullets);
     }
 
+    private void Update()
+    {
+        
+    }
+
     // Método para actualizar las balas actuales
     public void UpdateCurrentBullets(int currentBullets)
     {

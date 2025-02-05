@@ -29,6 +29,7 @@ public class WeaponControllerAutomatic : MonoBehaviour
 
     private Vector3 currentRecoil = Vector3.zero;
     private Vector3 targetRecoil = Vector3.zero;
+    [SerializeField] WeaponInfo_UI weaponInfo;
 
     private void Awake()
     {
@@ -55,6 +56,7 @@ public class WeaponControllerAutomatic : MonoBehaviour
         // Disparo automático si se mantiene presionado
         if (Input.GetButton("Fire1") && currentAmmo > 0 && Time.time >= lastTimeShoot + fireRate)
         {
+            weaponInfo.Disparar();
             lastTimeShoot = Time.time;
             HandleShoot();
         }
@@ -117,6 +119,7 @@ public class WeaponControllerAutomatic : MonoBehaviour
 
     private IEnumerator Reload()
     {
+        weaponInfo.Recargar();
         if (isReloading)
             yield break;
 
