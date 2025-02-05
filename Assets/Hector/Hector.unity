@@ -2475,6 +2475,7 @@ MonoBehaviour:
   recoilForceX: 2
   recoilForceY: 0.5
   recoilRecoverySpeed: 5
+  weaponInfo: {fileID: 0}
 --- !u!114 &1624875806
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2816,6 +2817,7 @@ MonoBehaviour:
   recoilForceX: 2
   recoilForceY: 0.5
   recoilRecoverySpeed: 5
+  weaponInfo: {fileID: 1202030567}
 --- !u!114 &1776225810
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2975,6 +2977,11 @@ PrefabInstance:
       propertyPath: fireRate
       value: 0.8
       objectReference: {fileID: 0}
+    - target: {fileID: 1428040483940373137, guid: 05e61be59651f644b8684b0ac069ac00,
+        type: 3}
+      propertyPath: weaponInfo
+      value: 
+      objectReference: {fileID: 1202030567}
     - target: {fileID: 1428040483940373137, guid: 05e61be59651f644b8684b0ac069ac00,
         type: 3}
       propertyPath: bulletHolePrefab
