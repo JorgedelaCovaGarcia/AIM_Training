@@ -6,11 +6,11 @@ public class RealBullet : MonoBehaviour
 {
     private void OnTriggerEnter(Collider collision)
     {
-        Debug.Log("Atravieso algo!");
+        Debug.Log("Atravieso algo!" + collision.name);
+        
         if (collision.gameObject.CompareTag("Sphere"))
         {
             Debug.Log("Tocado!!");
-            Destroy(this.gameObject);
             Destroy(collision.gameObject);
         }
     }
