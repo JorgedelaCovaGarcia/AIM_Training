@@ -8,7 +8,7 @@ public class zombieizqaderecha : MonoBehaviour
     public float speed = 2.0f;  
     private float moveDirection = 1.0f; 
 
-    public int health = 5;  
+    public int health = 1;  
     private bool isDead = false;
 
 
@@ -16,7 +16,7 @@ public class zombieizqaderecha : MonoBehaviour
     void Start()
     {
         
-        Destroy(gameObject, 10f);
+        
     }
 
     void Update()
@@ -67,7 +67,7 @@ public class zombieizqaderecha : MonoBehaviour
     {
         isDead = true; 
       
-        Destroy(gameObject, 1f); 
+        Destroy(gameObject); 
     }
      
 }

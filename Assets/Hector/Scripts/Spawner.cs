@@ -21,7 +21,7 @@ public class Spawner : MonoBehaviour
     void Start()
     {
        
-        InvokeRepeating("GenerarZombie", 0f, tiempoDeGeneracion);
+        InvokeRepeating("GenerarZombie", 6f, tiempoDeGeneracion);
     }
 
     void GenerarZombie()
