@@ -16,7 +16,7 @@ public class Enemigolinearecta : MonoBehaviour
         direction = new Vector3(-1, 0, 1);  
 
         
-        zigzagDirection = Random.Range(-1f, 1f);  
+        zigzagDirection = Random.Range(-2f, 2f);  
     }
 
     void Update()
